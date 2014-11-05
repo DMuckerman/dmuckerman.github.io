@@ -32,7 +32,7 @@
           </header>
         </div>
 
-        <div class="animated fadeInUp center" id="networks">
+        <div class="animated fadeInUp center" id="mac">
           Remembering a webpage has never been easier.
           <div id="button">
             <a href="../dl/The Unofficial OmniFocus Safari Extension.safariextz" style="color: rgba(147, 0, 147, 1);">
@@ -41,12 +41,87 @@
           </div>
           <br />
           <img src="css/safaribar.png">
-        </div> <!-- Talk about yourself here -->
+        </div> <!-- Mac -->
+        <div class="animated fadeInUp center" id="ios">
+          The Unofficial OmniFocus Safari Extension is only available for Safari on OSX.
+          <br />
+          But you can click here to create a reminder in OmniFocus to download it once you get back to your Mac.
+          <div id="button">
+            <a href="omnifocus:///add?note=http://www.danielmuckerman.com/projects/omnifocus.html&name=Download the Unofficial OmniFocus Safari Extension" id="reminder" class="reminder" style="color: rgba(147, 0, 147, 1);">
+              Reminder
+            </a>
+          </div>
+          <br />
+          <img src="css/safaribar.png">
+        </div> <!-- iPhone and iPad -->
+          <div class="animated fadeInUp center" id="other">
+          The Unofficial OmniFocus Safari Extension is only available for Safari on OSX.
+          <div id="button">
+            <p style="color: rgba(147, 0, 147, 0.5);">
+              Download
+            </p>
+          </div>
+          <br />
+          <img src="css/safaribar.png">
+        </div> <!-- Other devices -->
       </div>
     </div>
   </div>
 
 <script type="text/javascript" src="/scripts/retina.js"></script>
+
+<script type="text/javascript">
+
+  // To avoid the "protocol not supported" alert, fail must open another app.
+  var ios = "omnifocus:///add?note=http://www.danielmuckerman.com/dl/The Unofficial OmniFocus Safari Extension.safariextz&name=Download the Unofficial OmniFocus Safari Extension";
+
+  // Launches iMessage when option is clicked
+  function applink(ios) {
+    return function() {
+      var clickedAt = +new Date;
+      var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+      var OSX = /(Macintosh)/g.test( navigator.userAgent);
+      if (iOS) {
+        window.location = ios;
+      } else if (OSX) {
+        window.location = ios;
+      } else {  // Safety case, in case an incompatible device exposes the link
+        alert("Sorry, this option only works on an iOS device with OmniFocus installed!");
+      }
+    }
+  }
+
+  // Ensures iMessage option only shows up on available platforms
+  function appleCheck () {
+    var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+    var OSX = /(Macintosh)/g.test( navigator.userAgent);
+    var safari = /(Safari)/g.test( navigator.userAgent);
+    var chrome = /(Chrome)/g.test( navigator.userAgent);
+    if (!OSX) {
+      var element = document.getElementById("mac");
+      element.parentNode.removeChild(element);
+    }
+    if (!iOS) {
+      var element = document.getElementById("ios");
+      element.parentNode.removeChild(element);
+    }
+    if (!safari || chrome) {
+      var element = document.getElementById("mac");
+      element.parentNode.removeChild(element);
+      element = document.getElementById("ios");
+      element.parentNode.removeChild(element);
+    } else {
+      if (iOS || OSX) {
+          var element = document.getElementById("other");
+          element.parentNode.removeChild(element);
+      }
+    }
+  }  
+
+  window.beforeload = appleCheck();
+  document.getElementById("imessage").onclick = applink(ios);
+
+</script>
 
 </body>
 </html>

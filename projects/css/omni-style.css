@@ -201,7 +201,25 @@ a:hover, a:visited:hover {
    margin-top: 20%;
 }
 
-  #networks{
+  #mac{
+    color: white;
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight:200;
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+
+  #ios{
+    color: white;
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight:200;
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+
+  #other{
     color: white;
     text-align: center;
     font-family: 'Helvetica Neue', sans-serif;
