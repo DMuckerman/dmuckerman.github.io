@@ -151,29 +151,6 @@ a:hover, a:visited:hover {
   }
 
 /*------------------------------------*\
-  Footer
-\*------------------------------------*/
-
-  h2 {
-    color: white;
-    text-align: center;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight:300;
-    font-size: 30px;
-    margin-bottom: 50px;
-  }
-
-  footer {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:15%;
-   width:100%;
-   text-align: center;
-}
-
-
-/*------------------------------------*\
   Skills
 \*------------------------------------*/
 

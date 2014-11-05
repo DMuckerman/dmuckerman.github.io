@@ -58,6 +58,7 @@
     font-family: 'Helvetica Neue', sans-serif;
     font-weight:200;
     color: #fff; /* Font Color Color Here */
+    overflow: hidden;
   }
 
   body {
@@ -102,7 +103,7 @@ a:hover, a:visited:hover {
 \*------------------------------------*/
 
   #contain #content {
-    width: 420px;
+    width: 720px;
     padding: 20px;
   }
 
@@ -115,7 +116,7 @@ a:hover, a:visited:hover {
 
   #wrap {
     width: 100%;
-    height: 100%;
+    height: 60%;
     display: table;
     position: relative;
     z-index: 5; }
@@ -190,28 +191,40 @@ a:hover, a:visited:hover {
   Networks
 \*------------------------------------*/
 
-  #networks {
-   padding-top: 24px;
- }
-
- #networks a {
-  color: white;
-  text-align: center;
-  margin-left: 8px;
-  margin-right: 8px; 
-  font-size: 30px;
-  opacity: 0.3;
-  font-family: 'icomoon';
+ .center {
+   width: 1054px;
+   height: 1289px;
+   position: absolute;
+   left: 50%;
+   top: 50%; 
+   margin-left: -527px;
+   margin-top: 20%;
 }
 
-#networks a:first-child {
-	margin-left: 0px;
-}
+  #networks{
+    color: white;
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight:200;
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
 
-#networks a:hover {
-  color: #fff; 
-  opacity: .9;
-}
+  #button{
+    color: rgba(147, 0, 147, 1);
+    background-color: white;
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight:200;
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 25px;
+  }
 
 /*------------------------------------*\
   Clearfix
