@@ -54,43 +54,41 @@
   <!-- iMessage fanciness -->
   <!-- Only works on iOS and Mac, obviously. I hope to later present an alternative here for other platforms. -->
 
+<script type="text/javascript">
 
-  <script type="text/javascript">
+	// To avoid the "protocol not supported" alert, fail must open another app.
+	var mac = "imessage:danielmuckerman@me.com";
+	var iphone = "sms:danielmuckerman@me.com";
 
-// To avoid the "protocol not supported" alert, fail must open another app.
-var mac = "imessage:danielmuckerman@me.com";
-var iphone = "sms:danielmuckerman@me.com";
+	// Launches iMessage when option is clicked
+	function applink(mac, iphone) {
+  	return function() {
+			var clickedAt = +new Date;
+    	var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+    	var OSX = /(Macintosh)/g.test( navigator.userAgent);
+    	if (iOS) {
+      		window.location = iphone;
+    	} else if (OSX) {
+      		window.location = mac;
+    	} else {  // Safety case, in case an incompatible device exposes the link
+      	alert("Sorry, this option only works on iOS 5.0+ and OSX 10.8+!\n"
+       		+ "If you want to contact me, try email!");
+    	}
+  	}
+	}
 
-// Launches iMessage when option is clicked
-function applink(mac, iphone) {
-  return function() {
-    var clickedAt = +new Date;
-    var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
-    var OSX = /(Macintosh)/g.test( navigator.userAgent);
-    if (iOS) {
-      window.location = iphone;
-    } else if (OSX) {
-      window.location = mac;
-    } else {  // Safety case, in case an incompatible device exposes the link
-      alert("Sorry, this option only works on iOS 5.0+ and OSX 10.8+!\n"
-        + "If you want to contact me, try email!");
-    }
-  }
-}
+	// Ensures iMessage option only shows up on available platforms
+	function appleCheck () {
+  	var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+  	var OSX = /(Macintosh)/g.test( navigator.userAgent);
+  	if (!iOS && !OSX) {
+    	var element = document.getElementById("imessage");
+    	element.parentNode.removeChild(element);
+  	}
+	}  
 
-// Ensures iMessage option only shows up on available platforms
-function appleCheck () {
-  var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
-  var OSX = /(Macintosh)/g.test( navigator.userAgent);
-  if (!iOS && !OSX) {
-    var element = document.getElementById("imessage");
-    element.parentNode.removeChild(element);
-  }
-}  
-
-window.beforeload = appleCheck();
-document.getElementById("imessage").onclick = applink(mac, iphone);
-
+	window.beforeload = appleCheck();
+	document.getElementById("imessage").onclick = applink(mac, iphone);
 </script>
 
 <script type="text/javascript" src="js/retina.min.js"></script>
