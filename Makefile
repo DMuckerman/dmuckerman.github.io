@@ -3,4 +3,4 @@ help:
 
 deploy:
 	cp CNAME target/
-	ghp-import -p target/
+	ghp-import -b master -p target/
