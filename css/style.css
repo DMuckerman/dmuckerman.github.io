@@ -60,150 +60,151 @@
     color: #fff; /* Font Color Color Here */
   }
 
+  /* Background pattern from subtlepatterns.com */
   body {
-  background-image: url('../img/crissXcross.png');
-}
-
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  body {
-    background-image: url('../img/crissXcross_@2x.png');
-    background-size: 512px 512px;
+      background-image: url('../img/crissXcross.png');
   }
-}
 
- a, a:visited {
-  color: #0088cc;
-  cursor: pointer;
-  text-decoration: none;
-  -webkit-transition: all 0.15s ease;
-  -moz-transition: all 0.15s ease;
-  -ms-transition: all 0.15s ease;
-  -o-transition: all 0.15s ease;
-  transition: all 0.15s ease;
-}
+  @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      body {
+	  background-image: url('../img/crissXcross_@2x.png');
+	  background-size: 512px 512px;
+      }
+  }
 
-a.link, a.link:visited {
-  color: #0088cc;
-  text-decoration: underline;
-}
+  a, a:visited {
+      color: #0088cc;
+      cursor: pointer;
+      text-decoration: none;
+      -webkit-transition: all 0.15s ease;
+      -moz-transition: all 0.15s ease;
+      -ms-transition: all 0.15s ease;
+      -o-transition: all 0.15s ease;
+      transition: all 0.15s ease;
+  }
 
-a.highlight:hover {
-	border-bottom: 3px solid rgba(255,255,255,0.2);
-}
+  a.link, a.link:visited {
+      color: #0088cc;
+      text-decoration: underline;
+  }
 
-a:hover, a:visited:hover {
-  color: #006699; }
+  a.highlight:hover {
+      border-bottom: 3px solid rgba(255,255,255,0.2);
+  }
+
+  a:hover, a:visited:hover {
+      color: #006699; }
 
   img.avatar {
-   width: 150px;
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
- }
+      width: 150px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
 
-/*------------------------------------*\
+  /*------------------------------------*\
   Site box
 \*------------------------------------*/
 
   #contain #content {
-    width: 420px;
-    padding: 20px;
+      width: 420px;
+      padding: 20px;
   }
 
   #contain #content * {
-    text-align: center; }
+      text-align: center; }
 
-/*------------------------------------*\
+  /*------------------------------------*\
   Centralised box
 \*------------------------------------*/
 
   #wrap {
-    width: 100%;
-    height: 100%;
-    display: table;
-    position: relative;
-    z-index: 5; }
+      width: 100%;
+      height: 100%;
+      display: table;
+      position: relative;
+      z-index: 5; }
 
-    #wrap #contain {
+  #wrap #contain {
       text-align: center;
       vertical-align: middle;
       display: table-cell; }
 
-      #wrap #contain #content {
-        display: inline-block; }
+  #wrap #contain #content {
+      display: inline-block; }
 
-/*------------------------------------*\
+  /*------------------------------------*\
   Header
 \*------------------------------------*/
 
   #header {
-    margin: 0 0 24px;
-    position: relative; 
+      margin: 0 0 24px;
+      position: relative; 
   }
 
   h1 {
-    color: white;
-    text-align: center;
-    font-family: 'Dancing Script', cursive;
-    font-size: 80px;
-    font-weight:700;
-    margin-bottom: 50px;
+      color: white;
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 80px;
+      font-weight:700;
+      margin-bottom: 50px;
   }
 
-/*------------------------------------*\
+  /*------------------------------------*\
   Skills
 \*------------------------------------*/
 
   #intro {
-    font-size: 22px;
-    color: #fff;
-    line-height: 30px;
-    text-align: center;
-    margin-bottom: 24px;
-    display: block; 
+      font-size: 22px;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      margin-bottom: 24px;
+      display: block; 
   }
 
   #intro a {
-    color: #fff;
+      color: #fff;
   }
 
-/*------------------------------------*\
+  /*------------------------------------*\
   Networks
 \*------------------------------------*/
 
   #networks {
-   padding-top: 24px;
- }
+      padding-top: 24px;
+  }
 
- #networks a {
-  color: white;
-  text-align: center;
-  margin-left: 8px;
-  margin-right: 8px; 
-  font-size: 30px;
-  opacity: 0.3;
-  font-family: 'icomoon';
-}
+  #networks a {
+      color: white;
+      text-align: center;
+      margin-left: 8px;
+      margin-right: 8px; 
+      font-size: 30px;
+      opacity: 0.3;
+      font-family: 'icomoon';
+  }
 
-#networks a:first-child {
-	margin-left: 0px;
-}
+  #networks a:first-child {
+      margin-left: 0px;
+  }
 
-#networks a:hover {
-  color: #fff; 
-  opacity: .9;
-}
+  #networks a:hover {
+      color: #fff; 
+      opacity: .9;
+  }
 
-/*------------------------------------*\
+  /*------------------------------------*\
   Clearfix
 \*------------------------------------*/
 
   .clear, #header, #footer {
-    zoom: 1; }
+      zoom: 1; }
 
-    .clear:before, #header:before, #footer:before, .clear:after, #header:after, #footer:after {
+  .clear:before, #header:before, #footer:before, .clear:after, #header:after, #footer:after {
       content: '';
       display: block; }
 
-      .clear:after, #header:after, #footer:after {
-        clear: both; }
+  .clear:after, #header:after, #footer:after {
+      clear: both; }
