@@ -26,29 +26,31 @@
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Dancing+Script:400,700' rel='stylesheet' type='text/css'>
 
+	<!-- IndieAuth -->
+	<link href="sms:+2404220062" rel="me">
 </head>
 
 <body>
     <div id="wrap">
-	<div id="contain">
-	    <div class="animated fadeIn" id="content">
-		<div id="header">
-		    <header>
-			<h1>Daniel</h1>
-		    </header>
-		</div>
+				<div id="contain">
+						<div class="animated fadeIn" id="content">
+								<div id="header">
+										<header>
+												<h1>Daniel</h1>
+										</header>
+								</div>
 
-		<p id="intro">Hi, I'm Daniel Muckerman. I'm a graduate of <a href="http://www.ycp.edu" class="link">York College of Pennsylvania</a> with a Bachelors of Science in Computer Science.</p> <!-- Talk about yourself here -->
+								<p id="intro">Hi, I'm Daniel Muckerman. I'm a graduate of <a href="http://www.ycp.edu" class="link">York College of Pennsylvania</a> with a Bachelors of Science in Computer Science.</p> <!-- Talk about yourself here -->
 
-		<p class="animated fadeInUp" id="networks">
-		    <a data-tip="Twitter" href="http://twitter.com/flamwenco" class="twitter" >&#xe003;</a> <!-- Twitter -->
-		    <a data-tip="Github" href="http://github.com/dmuckerman" class="github" >&#xe601;</a> <!-- Github -->
-		    <a data-tip="R&eacute;sum&eacute;" href="Resume.pdf" class="resume">&#xe922;</a>
-		    <a data-tip="iMessage" href="#" id="imessage" class="imessage">&#xe603;</a> <!-- iMessage -->
-		    <a data-tip="Email" href="mailto:danielmuckerman@me.com" class="mail">&#xe030;</a> <!-- Email Address -->
-		</p>
-	    </div>
-	</div>
+								<p class="animated fadeInUp" id="networks">
+										<a data-tip="Twitter" href="http://twitter.com/flamwenco" rel="me" class="twitter" >&#xe003;</a> <!-- Twitter -->
+										<a data-tip="Github" href="http://github.com/dmuckerman" re="me" class="github" >&#xe601;</a> <!-- Github -->
+										<a data-tip="R&eacute;sum&eacute;" href="Resume.pdf" class="resume">&#xe922;</a>
+										<a data-tip="iMessage" href="#" id="imessage" class="imessage">&#xe603;</a> <!-- iMessage -->
+										<a data-tip="Email" href="mailto:danielmuckerman@me.com" rel="me" class="mail">&#xe030;</a> <!-- Email Address -->
+								</p>
+						</div>
+				</div>
     </div>
 
     <!-- iMessage fanciness -->
@@ -62,29 +64,29 @@
 
      // Launches iMessage when option is clicked
      function applink(mac, iphone) {
-  	 return function() {
-	     var clickedAt = +new Date;
-    	     var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
-    	     var OSX = /(Macintosh)/g.test( navigator.userAgent);
-    	     if (iOS) {
-      		 window.location = iphone;
-    	     } else if (OSX) {
-      		 window.location = mac;
-    	     } else {  // Safety case, in case an incompatible device exposes the link
-      		 alert("Sorry, this option only works on iOS 5.0+ and OSX 10.8+!\n"
-       		     + "If you want to contact me, try email!");
-    	     }
-  	 }
+  			 return function() {
+						 var clickedAt = +new Date;
+    				 var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+    				 var OSX = /(Macintosh)/g.test( navigator.userAgent);
+    				 if (iOS) {
+      					 window.location = iphone;
+    				 } else if (OSX) {
+      					 window.location = mac;
+    				 } else {  // Safety case, in case an incompatible device exposes the link
+      					 alert("Sorry, this option only works on iOS 5.0+ and OSX 10.8+!\n"
+       							 + "If you want to contact me, try email!");
+    				 }
+  			 }
      }
 
      // Ensures iMessage option only shows up on available platforms
      function appleCheck () {
-  	 var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
-  	 var OSX = /(Macintosh)/g.test( navigator.userAgent);
-  	 if (!iOS && !OSX) {
-    	     var element = document.getElementById("imessage");
-    	     element.parentNode.removeChild(element);
-  	 }
+  			 var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
+  			 var OSX = /(Macintosh)/g.test( navigator.userAgent);
+  			 if (!iOS && !OSX) {
+    				 var element = document.getElementById("imessage");
+    				 element.parentNode.removeChild(element);
+  			 }
      }  
 
      window.beforeload = appleCheck();
