@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/flamwenco
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.danielmuckerman.com
+  * I am flamwenco (https://keybase.io/flamwenco) on keybase.
+  * I have a public key with fingerprint 5092 7454 AF38 94E3 7AF7  C6C3 A7F2 F1F8 D50A 1F09
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120d347b5ccc48fde270741b2edf6a673a4531b874d982e6541685a9c946e8747270a",
+            "fingerprint": "50927454af3894e37af7c6c3a7f2f1f8d50a1f09",
+            "host": "keybase.io",
+            "key_id": "a7f2f1f8d50a1f09",
+            "kid": "0101e56637b7043e956ae1aa502adc8eb13a20e5ec1ef28bfb147579b6d5a483cf7a0a",
+            "uid": "206048f59d2d569369dad2c96e8b1419",
+            "username": "flamwenco"
+        },
+        "service": {
+            "hostname": "www.danielmuckerman.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1465967089,
+    "expire_in": 157680000,
+    "prev": "35c53150aa7fcf016f3f6fcad01834c23be3545755aeda7342b13b72d9c0d5bb",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMN4AnicbZJ7UFRlGMZ3zTbEEaR0li6QHMKRYuDcLyu4pVFpNhJGOAWt3znnO3D2
+dvbKJaTQ0syRnZQZIWaKaUxgHJqQ3bTRGGDBuOQUDBJKU1yyLGRAktLKwb5l9L/O
+P2fOO8/z+573OV/Pqvt00fqmP+ZvjUQ/vkL/Tddxvy5/9+R8BSZqcjlmqsBscOkF
+7TL0+iw2VcZMGE6QuEzRnMhIkkTzigxJDudoQiShrLCA5ShAMxQh8hwtCzwJWYYm
+WJ4BgiTQLERTDukBloYpqrMIelwe1elDWAYXSI5maKBQvEBDigMKJ7ESBTiFVAiF
+lxkcEAouIGOx5o04UDgReGG6qqEZ+rAsxfsf/b3cOAEZlqU4kcNpCgoMCyABAIOT
+QJZ4KBIUIHHIQImACsmLikjQHMMJIiszgOYpSeHAUm7/Eo7EWRxtzwgyKTOsQLGC
+DGRSEtCKyEhEzvV7occJHBCpFTtwlEKnpGGVaRgal6gSjDQbWeWupLS0NF0GThXa
+HX7JBj0O4EyXNAfiuDyaT5M0OxIV+3wuU4ThK3ctmaBouYuziKpTRpUiQwn0eFXN
+iZkIpJR8aoRP0CwjsBzOC2kYLHOpHmhRIwqGY3kcPZFjYAlCUoyEfh9qDzUpKTjB
+KpTCKhKQcYKnaImkREgxNMMxDIAy4CiaRM2JHCkLEi4zoohFFnQ7NcQmUE5QhJhe
+tcgJfH4PxCrDXQXLdfponeH+ZZG7potesfreDXyzNfbOcwfyih6qr/xu1+nxUzH/
+dr9TnD0UjHqw+eBfxoZpy+JwX+DpH6S5uCyTu/Z0M20udNA67qx11bFCelPyxkHD
+x+7gwvax6YV1TanJ4ZHz1nF8W9sOHvOunD/0I9k2bFXaWop35f2ZoLtymB958dPQ
+nWD3yLKxIXNr3WzV+utXjgbLqgsLTtx4ZRsV/9bFGiM5u8HRmZN4Lmf17owz8t4e
+fmNee80U9tjBui+xPVEhWNWfjz+T3YZP9h/osPRox88OTArxrulnY/+OqnAXBisb
+m+ca/zEub+3e95U49NG1nAnrk2a9MuHrXHsi8ES7fPhozb7frY/cJHvde8035x4o
+CwyFvsgVdI2v953TjRtbL1Wft5udV+vHw0b97YWt5Xn+N37xPVW1KWO0b2Dgw1OH
+HDvFD4Drgo3M3F+Xs4aKnT6yIZ8IrQuO5QRWuvFH9ds7Gkdr308JhGsNSYO1X9Mt
+J6ubTk7F3Uhc7Nd/1tv+/ScvNSTMXJ6JicvVv2xIzdi6kDibBs68wF5LlS+Mbdns
+2lzUFy402OpHw+9mPexp9X1+69W1e/L7e8efByP5nevHLrsv/dQWfm9H+rfJaxZN
+w8Jo/PD+xuyBlExbZqIutxB0WC92dyUdm5hNmpzaksJrodD1136dTug2hpNuzwSq
+G+xHdsY0//ZzQQ1BD75tNrVkpRmu/gfWJMnh
+=Zdrl
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/flamwenco
+
+==================================================================

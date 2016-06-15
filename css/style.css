@@ -32,32 +32,32 @@
  }
 
 /*------------------------------------*\
- 	Highlight Seclections 
+ 	Highlight Seclections
 \*------------------------------------*/
 
   ::selection {
-    background: #666566;
-    color: #fff;
-    text-shadow: none; /* Safari */
+			background: #666566;
+			color: #fff;
+			text-shadow: none; /* Safari */
   }
 
   ::-moz-selection {
-    background: #666566;
-    color: #fff;
-    text-shadow: none; /* Firefox */
+			background: #666566;
+			color: #fff;
+			text-shadow: none; /* Firefox */
   }
 
 
-/*------------------------------------*\
+	/*------------------------------------*\
   Document default
 \*------------------------------------*/
 
   body, html {
-    width: 100%;
-    height: 100%;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight:300;
-    color: #fff; /* Font Color Color Here */
+			width: 100%;
+			height: 100%;
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight:300;
+			color: #fff; /* Font Color Color Here */
   }
 
   /* Background pattern from subtlepatterns.com */
@@ -67,8 +67,8 @@
 
   @media all and (-webkit-min-device-pixel-ratio: 1.5) {
       body {
-	  background-image: url('../img/crissXcross_@2x.png');
-	  background-size: 512px 512px;
+					background-image: url('../img/crissXcross_@2x.png');
+					background-size: 512px 512px;
       }
   }
 
@@ -88,21 +88,22 @@
       text-decoration: underline;
   }
 
-  a.highlight:hover {
-      border-bottom: 3px solid rgba(255,255,255,0.2);
+  .highlight:hover {
+			border-bottom: 3px solid black;
+			border-bottom: 3px solid rgba(255,255,255,0.2);
   }
 
   a:hover, a:visited:hover {
       color: #006699; }
 
-  img.avatar {
+  .avatar {
       width: 150px;
       display: block;
       margin-left: auto;
       margin-right: auto;
   }
 
-  /*------------------------------------*\
+/*------------------------------------*\
   Site box
 \*------------------------------------*/
 
@@ -114,7 +115,7 @@
   #contain #content * {
       text-align: center; }
 
-  /*------------------------------------*\
+/*------------------------------------*\
   Centralised box
 \*------------------------------------*/
 
@@ -139,7 +140,7 @@
 
   #header {
       margin: 0 0 24px;
-      position: relative; 
+      position: relative;
   }
 
   h1 {
@@ -161,7 +162,7 @@
       line-height: 30px;
       text-align: center;
       margin-bottom: 24px;
-      display: block; 
+      display: block;
   }
 
   #intro a {
@@ -180,7 +181,7 @@
       color: white;
       text-align: center;
       margin-left: 8px;
-      margin-right: 8px; 
+      margin-right: 8px;
       font-size: 30px;
       opacity: 0.3;
       font-family: 'icomoon';
@@ -191,7 +192,7 @@
   }
 
   #networks a:hover {
-      color: #fff; 
+      color: #fff;
       opacity: .9;
   }
 
