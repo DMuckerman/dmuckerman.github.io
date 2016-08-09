@@ -40,13 +40,12 @@
 										</header>
 								</div>
 
-								<p id="intro">Hi, I'm Daniel Muckerman. I'm a graduate of <a href="http://www.ycp.edu" class="link">York College of Pennsylvania</a> with a Bachelors of Science in Computer Science.</p> <!-- Talk about yourself here -->
+								<p id="intro">Hi, I'm Daniel Muckerman. I'm a Junior Java Developer at <a href="http://www.abeyon.com" class="link">Abeyon.</a></p>
 
 								<p class="animated fadeInUp" id="networks">
 										<a data-tip="Twitter" href="http://twitter.com/flamwenco" rel="me" class="twitter" >&#xe003;</a> <!-- Twitter -->
 										<a data-tip="Github" href="http://github.com/dmuckerman" re="me" class="github" >&#xe601;</a> <!-- Github -->
-										<a data-tip="R&eacute;sum&eacute;" href="Resume.pdf" class="resume">&#xe922;</a>
-										<a data-tip="iMessage" href="#" id="imessage" class="imessage">&#xe603;</a> <!-- iMessage -->
+										<a data-tip="iMessage" href="#" id="imessage" class="imessage" style="display: none;">&#xe603;</a> <!-- iMessage -->
 										<a data-tip="Email" href="mailto:danielmuckerman@me.com" rel="me" class="mail">&#xe030;</a> <!-- Email Address -->
 								</p>
 						</div>
@@ -83,11 +82,12 @@
      function appleCheck () {
   			 var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
   			 var OSX = /(Macintosh)/g.test( navigator.userAgent);
-  			 if (!iOS && !OSX) {
+  			 if (iOS || OSX) {
     				 var element = document.getElementById("imessage");
-    				 element.parentNode.removeChild(element);
+    				 //element.parentNode.removeChild(element);
+						 element.style.display = 'inline';
   			 }
-     }  
+     }
 
      window.beforeload = appleCheck();
      document.getElementById("imessage").onclick = applink(mac, iphone);
