@@ -2,6 +2,11 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
         <style>
+          body {
+            background: url('img/Yosemite 3.jpg') no-repeat center fixed;
+            background-size: cover;
+          }
+
           .flex {
             /* flexbox setup */
             display: flex;
@@ -24,6 +29,7 @@
             padding-left: 15px;
             padding-right: 15px;
             margin: 5px;
+            background-color: white;
           }
 
           .wi {
@@ -32,43 +38,85 @@
             font-size: 6em;
             width: 100%;
           }
+
+          .app-box {
+            height: 250px;
+            margin: 5px;
+            vertical-align: middle;
+            text-align: center;
+          }
+
+          .app-icon {
+            border-radius: 37px;
+          }
+
+          .app-title {
+            font-size: 2em;
+            font-family: sans-serif;
+            color: white;
+            text-shadow: 1px 1px black;
+          }
         </style>
     </head>
-    <body onload="a()">
+    <body onload="a()"  link="white" vlink="white" alink="white">
         <div class="flex">
             <div class="weather-box" id="weather-1" style="display: none;">
-                <i id="weather-icon-1" class="wi wi-forecast-io-clear-night""></i>
+                <i id="weather-icon-1" class="wi wi-forecast-io-clear-day""></i>
                 <p id="weather-text-1">Here's the weather:</p>
             </div>
             <div class="weather-box" id="weather-2" style="display: none;">
-                <i id="weather-icon-2" class="wi wi-forecast-io-clear-night"></i>
+                <i id="weather-icon-2" class="wi wi-forecast-io-clear-day"></i>
                 <p id="weather-text-2">Here's the weather:</p>
             </div>
             <div class="weather-box" id="weather-3" style="display: none;">
-                <i id="weather-icon-3" class="wi wi-forecast-io-clear-night"></i>
+                <i id="weather-icon-3" class="wi wi-forecast-io-clear-day"></i>
                 <p id="weather-text-3">Here's the weather:</p>
             </div>
             <div class="weather-box" id="weather-4" style="display: none;">
-                <i id="weather-icon-4" class="wi wi-forecast-io-clear-night"></i>
+                <i id="weather-icon-4" class="wi wi-forecast-io-clear-day"></i>
                 <p id="weather-text-4">Here's the weather:</p>
             </div>
         </div>
         <div class="flex">
             <div class="weather-box" id="weather-5" style="display: none;">
-                <i id="weather-icon-5" class="wi wi-forecast-io-clear-night"></i>
+                <i id="weather-icon-5" class="wi wi-forecast-io-clear-day"></i>
                 <p id="weather-text-5">Here's the weather:</p>
             </div>
             <div class="weather-box" id="weather-6" style="display: none;">
-                <i id="weather-icon-6" class="wi wi-forecast-io-clear-night"></i>
+                <i id="weather-icon-6" class="wi wi-forecast-io-clear-day"></i>
                 <p id="weather-text-6">Here's the weather:</p>
             </div>
             <div class="weather-box" id="weather-7" style="display: none;">
-                <i id="weather-icon-7" class="wi wi-forecast-io-clear-night"></i>
+                <i id="weather-icon-7" class="wi wi-forecast-io-clear-day"></i>
                 <p id="weather-text-7">Here's the weather:</p>
             </div>
             <div class="weather-box" id="weather-8" style="display: none;">
-                <i id="weather-icon-8" class="wi wi-forecast-io-clear-night"></i>
+                <i id="weather-icon-8" class="wi wi-forecast-io-clear-day"></i>
                 <p id="weather-text-8">Here's the weather:</p>
+            </div>
+        </div>
+        <div style="width: 100%; text-align: center; color: white; text-shadow: 1px 1px black;">
+          <a href="https://darksky.net/poweredby/">Powered By Dark Sky</a>
+        </div>
+        <br><br><br><br>
+        <div class="flex">
+            <div class="app-box" id="app-1" style="display: block;">
+                <a href="https://gmail.com" style="text-decoration: none;">
+                  <img class="app-icon" src="img/Gmail_ipad.jpg" alt="Gmail" height="183px">
+                  <p class="app-title">Gmail</p>
+                </a>
+            </div>
+            <div class="app-box" id="app-2" style="display: block;">
+                <a href="https://facebook.com" style="text-decoration: none;">
+                  <img class="app-icon" src="img/Facebook_ipad.jpg" alt="Facebook" height="183px">
+                  <p class="app-title">Facebook</p>
+                </a>
+            </div>
+            <div class="app-box" id="app-3" style="display: block;">
+                <a href="https://mtb.com" style="text-decoration: none;">
+                  <img class="app-icon" src="img/M-T-Bank_ipad.jpg" alt="M&T Bank" height="183px">
+                  <p class="app-title">M&amp;T Bank</p>
+                </a>
             </div>
         </div>
         <script>
@@ -76,7 +124,7 @@
           function initMap() { }
 
           function a() {
-            var zips = ["21710", "22015","98144", "12345", "23456", "45678"];
+            var zips = ["21710", "21774"];
             for (index = 0; index < zips.length; ++index) {
               getLatLng(zips[index], index);
             }
@@ -84,16 +132,15 @@
 
           function b(loc, index) {
             var dsApiKey = '9185a92cb02c7a66daa9e4e048958bd6';
-            //var googApiKey = 'AIzaSyAsTaj8IzGHTWKAdTd2JwSfXtS6wNkD7zQ';
             var darkSkyUrl = 'https://api.darksky.net/forecast/';
             var data;
 
-            //$.getJSON(darkSkyUrl + dsApiKey + "/" + loc[0] + "," + loc[1] + "?callback=?", function(data) {
+            $.getJSON(darkSkyUrl + dsApiKey + "/" + loc[0] + "," + loc[1] + "?callback=?", function(data) {
               console.log(data);
               $('#weather-' + (index + 1)).show();
-              $('#weather-text-' + (index + 1)).html("<h6>" + loc[2] + "</h6>" + data.hourly.summary + '<br><strong>Temperature is: ' + data.currently.temperature + "&deg;F</strong>");
+              $('#weather-text-' + (index + 1)).html("<h3>" + loc[2] + "</h3>" + data.hourly.summary + '<br><br><strong>Temperature is: ' + data.currently.temperature + "&deg;F</strong>");
               $('#weather-icon-' + (index + 1)).attr("class", "wi wi-forecast-io-" + data.hourly.icon);
-            //});
+            });
           }
 
           function getLatLng(zip, index) {
