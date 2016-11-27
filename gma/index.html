@@ -4,7 +4,7 @@
         <title>Homepage</title>
         <style>
           body {
-            background: url('img/Yosemite 3.jpg') no-repeat center fixed;
+            background-color: #2B2B35;
             background-size: cover;
           }
 
@@ -27,9 +27,9 @@
             border-radius: 10px;
             border-width: 1px;
             padding-top: 35px;
-            padding-left: 15px;
-            padding-right: 15px;
-            margin: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin: 2px;
             background-color: white;
           }
 
@@ -38,6 +38,7 @@
             display:inline-block;
             font-size: 6em;
             width: 100%;
+            padding-bottom: 5px;
           }
 
           .app-box {
@@ -106,7 +107,7 @@
           function initMap() { }
 
           function a() {
-            var zips = ["21774", "32080", "07460", "08882", "32159", "98144"];
+            var zips = ["21774", "32080", "07460", "08882", "32159"];
             for (index = 0; index < zips.length; ++index) {
               getLatLng(zips[index], index);
             }
@@ -115,12 +116,20 @@
           function b(loc, index) {
             var dsApiKey = '9185a92cb02c7a66daa9e4e048958bd6';
             var darkSkyUrl = 'https://api.darksky.net/forecast/';
-            var data;
+            var data = {
+              "currently": {
+    "temperature": 48.71,
+  },
+  "hourly": {
+    "summary": "Rain throughout the day.",
+    "icon": "rain"
+  }
+};
 
             $.getJSON(darkSkyUrl + dsApiKey + "/" + loc[0] + "," + loc[1] + "?callback=?", function(data) {
               console.log(data);
               $('#weather-' + (index + 1)).show();
-              $('#weather-text-' + (index + 1)).html("<h3>" + loc[2] + "</h3>" + data.hourly.summary + '<br><br><strong>Temperature is: ' + data.currently.temperature + "&deg;F</strong>");
+              $('#weather-text-' + (index + 1)).html("<h3>" + loc[2] + "</h3>" + data.hourly.summary + '<br><strong>Temperature is: ' + data.currently.temperature + "&deg;F</strong>");
               $('#weather-icon-' + (index + 1)).attr("class", "wi wi-forecast-io-" + data.hourly.icon);
             });
           }
