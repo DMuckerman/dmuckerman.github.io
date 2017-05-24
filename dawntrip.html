@@ -30,7 +30,7 @@
 
 				 document.getElementById("day").innerHTML = "The " + _names[days] + " Day";
 				 document.getElementById("remain").innerHTML = "- " + hours + " Hours Remain -";
-				 document.title = hours + " Hours Remain";
+				 window.parent.document.title = hours + " Hours Remain";
 
 				 timer = setInterval(showRemaining, 60000);
 		 }
