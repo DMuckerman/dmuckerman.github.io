@@ -31,14 +31,14 @@
 				 var days = Math.floor(distance / _day);
 				 var hours = Math.floor(distance / _hour);
 
-				 if (hours !== 1) {
+				 if (hours !== 0) {
 
 						 document.getElementById("day").innerHTML = "The " + _names[days] + " Day";
 						 document.getElementById("remain").innerHTML = "- " + hours + " Hours Remain -";
 						 document.title = hours + " Hours Remain";
 
 						 updateSong(2 - days);
-				 } else if (hours === 1) {
+				 } else if (hours === 0) {
 						 document.getElementById("dawn").innerHTML = "";
 						 document.getElementById("day").innerHTML = "The Final Hour";
 						 document.getElementById("remain").innerHTML = "";
@@ -64,10 +64,10 @@
 
 				 if (source.src.localeCompare(url) !== 0) {
 						 source.src = url;
-				 }
 
-				 audio.load();
-				 audio.play();
+						 audio.load();
+						 audio.play();
+				 }
 		 }
 
 		 function audioPlay() {
