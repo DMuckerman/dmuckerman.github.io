@@ -34,6 +34,8 @@
 				 document.getElementById("remain").innerHTML = "- " + hours + " Hours Remain -";
 				 document.title = hours + " Hours Remain";
 
+				 updateSong(2 - days);
+
 				 timer = setInterval(showRemaining, 60000);
 		 }
 
@@ -42,6 +44,21 @@
 				 document.getElementById('parent').style.display = 'none';
 				 document.getElementById('parent').style.display = disp;
 		 });
+
+		 function updateSong(day) {
+				 var audio = document.getElementById('myAudio');
+				 var source = document.getElementById('muzak');
+
+				 var url = "http://www.danielmuckerman.com/dawn/day" + (day + 1) + ".mp3";
+
+				 if (source.src.localeCompare(url) !== 0) {
+						 source.src = url;
+				 }
+
+				 audio.load();
+				 audio.play();
+		 }
+
 		</script>
 		<style>
 		 body {
@@ -94,7 +111,9 @@
 		</style>
 </head>
 <body onload="showRemaining()">
-		<audio id="myAudio" autoplay loop></audio>
+		<audio id="myAudio" loop>
+				<source id="muzak" src="" type="audio/mpeg">
+		</audio>
 		<div id="parent">
 				<div id="dawntrip">
 						<span id="dawn" class="dawnof">Dawn of</span>
