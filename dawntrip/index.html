@@ -1,0 +1,76 @@
+<head>
+		<script>
+		 var end = new Date('05/26/2017 1:00 PM');
+
+		 var _second = 1000;
+		 var _minute = _second * 60;
+		 var _hour = _minute * 60;
+		 var _day = _hour * 24;
+		 var _names = ["Final", "Second", "First"];
+		 var timer;
+
+		 function showRemaining() {
+				 var now = new Date();
+				 var distance = end - now;
+				 if (distance < 0) {
+						 clearInterval(timer);
+						 console.log("Expired!");
+						 document.getElementById("dawn").innerHTML = "";
+						 document.getElementById("day").innerHTML = "";
+						 document.getElementById("remain").innerHTML = "";
+
+						 document.getElementById("dawntrip").innerHTML = "Fin";
+
+						 return;
+				 }
+
+				 var days = Math.floor(distance / _day);
+				 var hours = Math.floor(distance / _hour);
+
+
+				 document.getElementById("day").innerHTML = "The " + _names[days] + " Day";
+				 document.getElementById("remain").innerHTML = "- " + hours + " Hours Remain -";
+				 document.title = hours + " Hours Remain";
+
+				 timer = setInterval(showRemaining, 60000);
+		 }
+		</script>
+		<style>
+		 body {
+				 background-color: black;
+				 color: white;
+				 text-align: center;
+
+		 }
+
+		 #dawntrip {
+				 position: relative;
+				 top: 50%;
+				 transform: translateY(-50%);
+				 font-family: "Arial Narrow", Arial, sans-serif;
+				 font-weight: bold;
+				 font-size: 2em;
+		 }
+
+		 .dawnof {
+				 font-size: 2em;
+		 }
+
+		 .dayfont {
+				 font-size: 3.5em;
+		 }
+
+		 .remainfont {
+				 font-size: 1em;
+		 }
+		</style>
+</head>
+<body onload="showRemaining()">
+		<div id="dawntrip">
+				<span id="dawn" class="dawnof">Dawn of</span>
+				<br>
+				<span id="day" class="dayfont"></span>
+				<br>
+				<span id="remain" class="remainfont"></span>
+		</div>
+</body>
