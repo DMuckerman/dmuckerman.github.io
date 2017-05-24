@@ -52,16 +52,32 @@
 				 font-size: 2em;
 		 }
 
-		 .dawnof {
-				 font-size: 2em;
+		 @media (min-device-width: 666px) {
+				 .dawnof {
+						 font-size: 2em;
+				 }
+
+				 .dayfont {
+						 font-size: 3.5em;
+				 }
+
+				 .remainfont {
+						 font-size: 1em;
+				 }
 		 }
 
-		 .dayfont {
-				 font-size: 3.5em;
-		 }
+		 @media (max-device-width: 666px) {
+				 .dawnof {
+						 font-size: 1.1em;
+				 }
 
-		 .remainfont {
-				 font-size: 1em;
+				 .dayfont {
+						 font-size: 1.4em;
+				 }
+
+				 .remainfont {
+						 font-size: 0.8em;
+				 }
 		 }
 		</style>
 </head>
