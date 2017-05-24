@@ -23,18 +23,31 @@
 
 						 document.getElementById("dawntrip").innerHTML = "Fin";
 
+						 document.getElementById("myAudio").pause()
+
 						 return;
 				 }
 
 				 var days = Math.floor(distance / _day);
 				 var hours = Math.floor(distance / _hour);
 
+				 hours = 1;
 
-				 document.getElementById("day").innerHTML = "The " + _names[days] + " Day";
-				 document.getElementById("remain").innerHTML = "- " + hours + " Hours Remain -";
-				 document.title = hours + " Hours Remain";
+				 if (hours !== 1) {
 
-				 updateSong(2 - days);
+						 document.getElementById("day").innerHTML = "The " + _names[days] + " Day";
+						 document.getElementById("remain").innerHTML = "- " + hours + " Hours Remain -";
+						 document.title = hours + " Hours Remain";
+
+						 updateSong(2 - days);
+				 } else if (hours === 1) {
+						 document.getElementById("dawn").innerHTML = "";
+						 document.getElementById("day").innerHTML = "The Final Hour";
+						 document.getElementById("remain").innerHTML = "";
+						 document.title = "The Final Hour"
+
+						 updateSong(-1);
+				 }
 
 				 timer = setInterval(showRemaining, 60000);
 		 }
