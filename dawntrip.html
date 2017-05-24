@@ -59,6 +59,13 @@
 				 audio.play();
 		 }
 
+		 function audioPlay() {
+				 var audio = document.getElementById('myAudio');
+
+				 audio.load();
+				 audio.play();
+		 }
+
 		</script>
 		<style>
 		 body {
@@ -115,7 +122,7 @@
 				<source id="muzak" src="" type="audio/mpeg">
 		</audio>
 		<div id="parent">
-				<div id="dawntrip">
+				<div id="dawntrip" onclick="audioPlay()">
 						<span id="dawn" class="dawnof">Dawn of</span>
 						<br>
 						<span id="day" class="dayfont"></span>
