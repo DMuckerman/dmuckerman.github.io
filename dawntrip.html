@@ -1,7 +1,7 @@
 <head>
 
 		<script>
-		 var end = new Date('05/26/2017 1:00 PM');
+		 var end = new Date('09/22/2017 1:00 PM');
 
 		 var _second = 1000;
 		 var _minute = _second * 60;
@@ -27,12 +27,26 @@
 
 						 return;
 				 }
+				 
+				 if (Math.floor(distance / _day) > 2) {
+						 clearInterval(timer);
+						 
+						 document.getElementById("dawn").innerHTML = "";
+						 document.getElementById("day").innerHTML = "";
+						 document.getElementById("remain").innerHTML = "";
+
+						 document.getElementById("dawntrip").innerHTML = "It is not yet time";
+
+						 document.getElementById("myAudio").pause()
+
+						 return;
+				 }
 
 				 var days = Math.floor(distance / _day);
 				 var hours = Math.floor(distance / _hour);
 
 				 if (hours !== 0) {
-
+						 document.getElementById("dawn").innerHTML = "Dawn of";
 						 document.getElementById("day").innerHTML = "The " + _names[days] + " Day";
 						 document.getElementById("remain").innerHTML = "- " + hours + " Hours Remain -";
 						 document.title = hours + " Hours Remain";
@@ -134,7 +148,7 @@
 		</audio>
 		<div id="parent">
 				<div id="dawntrip" onclick="audioPlay()">
-						<span id="dawn" class="dawnof">Dawn of</span>
+						<span id="dawn" class="dawnof"></span>
 						<br>
 						<span id="day" class="dayfont"></span>
 						<br>
