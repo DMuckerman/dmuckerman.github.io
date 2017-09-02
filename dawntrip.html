@@ -2,6 +2,8 @@
 
 		<script>
 		 var end = new Date('09/22/2017 1:00 PM');
+		 var start = new Date('09/21/2017');
+		 var percent = 100/19;
 
 		 var _second = 1000;
 		 var _minute = _second * 60;
@@ -27,23 +29,16 @@
 
 						 return;
 				 }
-				 
-				 if (Math.floor(distance / _day) > 2) {
-						 clearInterval(timer);
-						 
-						 document.getElementById("dawn").innerHTML = "";
-						 document.getElementById("day").innerHTML = "";
-						 document.getElementById("remain").innerHTML = "";
-
-						 document.getElementById("dawntrip").innerHTML = "It is not yet time";
-
-						 document.getElementById("myAudio").pause()
-
-						 return;
-				 }
 
 				 var days = Math.floor(distance / _day);
 				 var hours = Math.floor(distance / _hour);
+				 
+				 var daysSince = Math.round((now - start)/(1000*60*60*24));
+				 console.log(daysSince);
+				 document.getElementById("dawn").style.opacity = (daysSince * percent) / 100;
+				 document.getElementById("day").style.opacity = (daysSince * percent) / 100;
+				 document.getElementById("remain").style.opacity = (daysSince * percent) / 100;
+
 
 				 if (hours !== 0) {
 						 document.getElementById("dawn").innerHTML = "Dawn of";
