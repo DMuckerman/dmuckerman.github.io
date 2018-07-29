@@ -101,60 +101,59 @@
         </div>
         <div style="width: 100%; text-align: center; color: white; text-shadow: 1px 1px black;">
           <a href="https://darksky.net/poweredby/">Powered By Dark Sky</a>
+	  <a href="https://www.openstreetmap.org/copyright">Geolocation &copy; OpenStreetMap contributors</a>
         </div>
         <script>
 
-          function initMap() { }
+         function a() {
+             var zips = ["21774", "32080", "07460", "08882", "32159"];
+             for (index = 0; index < zips.length; ++index) {
+		 getLatLng(zips[index], index);
+             }
+         }
 
-          function a() {
-            var zips = ["21774", "32080", "07460", "08882", "32159"];
-            for (index = 0; index < zips.length; ++index) {
-              getLatLng(zips[index], index);
-            }
-          }
+         function b(loc, index) {
+             var dsApiKey = '9185a92cb02c7a66daa9e4e048958bd6';
+             var darkSkyUrl = 'https://api.darksky.net/forecast/';
+             var data = {
+		 "currently": {
+		     "temperature": 48.71,
+		 },
+		 "hourly": {
+		     "summary": "Rain throughout the day.",
+		     "icon": "rain"
+		 }
+	     };
 
-          function b(loc, index) {
-            var dsApiKey = '9185a92cb02c7a66daa9e4e048958bd6';
-            var darkSkyUrl = 'https://api.darksky.net/forecast/';
-            var data = {
-              "currently": {
-    "temperature": 48.71,
-  },
-  "hourly": {
-    "summary": "Rain throughout the day.",
-    "icon": "rain"
-  }
-};
+             $.getJSON(darkSkyUrl + dsApiKey + "/" + loc[0] + "," + loc[1] + "?callback=?", function(data) {
+		 console.log(data);
+		 $('#weather-' + (index + 1)).show();
+		 $('#weather-text-' + (index + 1)).html("<h3>" + loc[2] + "</h3>" + data.hourly.summary + '<br><strong>Temperature is: ' + data.currently.temperature + "&deg;F</strong>");
+		 $('#weather-icon-' + (index + 1)).attr("class", "wi wi-forecast-io-" + data.hourly.icon);
+             });
+         }
 
-            $.getJSON(darkSkyUrl + dsApiKey + "/" + loc[0] + "," + loc[1] + "?callback=?", function(data) {
-              console.log(data);
-              $('#weather-' + (index + 1)).show();
-              $('#weather-text-' + (index + 1)).html("<h3>" + loc[2] + "</h3>" + data.hourly.summary + '<br><strong>Temperature is: ' + data.currently.temperature + "&deg;F</strong>");
-              $('#weather-icon-' + (index + 1)).attr("class", "wi wi-forecast-io-" + data.hourly.icon);
-            });
-          }
+         function getLatLng(zip, index) {
+             var loc = [];
+	     $.ajax({
+		 url: 'https://nominatim.openstreetmap.org/search',
+		 type: 'GET',
+		 data: {
+		     postalcode: zip,
+		     country: 'United States',
+		     format: 'json'
+		 }
+	     }).success(function(data) {
+		 console.log(data);
+		 loc_name = data[0].display_name.split(',');
+		 loc[0] = data[0].lat;
+		 loc[1] = data[0].lon;
+		 loc[2] = loc_name[0] + ',' + loc_name[loc_name.length - 3];
 
-          function getLatLng(zip, index) {
-            var loc = [];
-            var geocoder = new google.maps.Geocoder();
-
-            geocoder.geocode( { 'address': zip}, function(results, status) {
-              console.log(results);
-              if (status == google.maps.GeocoderStatus.OK) {
-                loc[0] = results[0].geometry.location.lat();
-                loc[1] = results[0].geometry.location.lng();
-                loc[2] = results[0].address_components[1].long_name + ", " + results[0].address_components[results[0].address_components.length - 2].short_name
-                b(loc, index);
-              } else {
-                alert("Geocode was not successful for the following reason: " + status);
-              }
-            });
-          }
+		 b(loc, index);
+	     });
+         }
         </script>
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsTaj8IzGHTWKAdTd2JwSfXtS6wNkD7zQ&callback=initMap">
-    </script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     </body>
 </html>
